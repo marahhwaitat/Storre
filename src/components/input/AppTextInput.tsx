@@ -1,14 +1,6 @@
 import React, { FC } from "react";
-import {
-  StyleSheet,
-  TouchableOpacity,
-  ViewStyle,
-  TextStyle,
-  GestureResponderEvent,
-  TextInput,
-} from "react-native";
+import { StyleSheet, TextStyle, TextInput } from "react-native";
 import { s, vs } from "react-native-size-matters";
-import AppText from "../texts/AppText";
 import { AppColors } from "../../style/colors";
 interface AppTextInputProps {
   value: string;

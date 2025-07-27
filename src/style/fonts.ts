@@ -1,7 +1,4 @@
-
-export const AppFonts ={
-    Bold : "Nunito-Bold",
-    Medium : "Nunito-Medium"
-
-
-}
+export const AppFonts = {
+  Bold: "Nunito-Bold",
+  Medium: "Nunito-Medium",
+};

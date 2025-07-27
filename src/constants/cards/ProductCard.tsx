@@ -1,7 +1,5 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import React ,{FC} from "react";
-import AppSaveView from "../../components/views/AppSaveView";
-import HomeHeader from "../../components/headers/HomeHeader";
+import React, { FC } from "react";
 import { s, vs } from "react-native-size-matters";
 import { AppColors } from "../../style/colors";
 import AppText from "../../components/texts/AppText";
@@ -16,11 +14,19 @@ interface IProductCard {
   imageURL: string;
 }
 
-const ProductCard: FC<IProductCard> = ({ onAddToCartPress, imageURL, title, price }) => {
+const ProductCard: FC<IProductCard> = ({
+  onAddToCartPress,
+  imageURL,
+  title,
+  price,
+}) => {
   return (
     <View style={styles.container}>
       {/* Add To Cart Button */}
-      <TouchableOpacity style={styles.addToCartButton} onPress={onAddToCartPress}>
+      <TouchableOpacity
+        style={styles.addToCartButton}
+        onPress={onAddToCartPress}
+      >
         <Ionicons name="cart" size={s(15)} color={AppColors.white} />
       </TouchableOpacity>
 

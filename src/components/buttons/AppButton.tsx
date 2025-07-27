@@ -9,14 +9,14 @@ import {
 import { s, vs } from "react-native-size-matters";
 import AppText from "../texts/AppText";
 import { AppColors } from "../../style/colors";
-
+type propStyle<T> = T extends Array<infer U> ? U[] : T;
 interface AppButtonProps {
   onPress: (event: GestureResponderEvent) => void;
   title: string;
   backgroundColor?: string;
   textColor?: string;
   style?: ViewStyle | ViewStyle[];
-  styleTitle?: TextStyle | TextStyle[];
+  styleTitle: propStyle<TextStyle>;
   disabled?: boolean;
 }
 
@@ -27,16 +27,25 @@ const AppButton: React.FC<AppButtonProps> = ({
   textColor = AppColors.white,
   style,
   styleTitle,
-  disabled = false
+  disabled = false,
 }) => {
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.8}
-      style={[styles.button, { backgroundColor: disabled ? AppColors.disabledGray : backgroundColor }, style]}
+      style={[
+        styles.button,
+        {
+          backgroundColor: disabled ? AppColors.disableGray : backgroundColor,
+        },
+        style,
+      ]}
       disabled={disabled}
     >
-      <AppText style={[styles.textTitle, { color: textColor }, styleTitle]} variant="bold">
+      <AppText
+        style={[styles.textTitle, { color: textColor }, styleTitle]}
+        variant="bold"
+      >
         {title}
       </AppText>
     </TouchableOpacity>

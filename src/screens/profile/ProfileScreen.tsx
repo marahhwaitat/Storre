@@ -1,4 +1,4 @@
-import { StyleSheet,Text ,View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import AppSaveView from "../../components/views/AppSaveView";
 import HomeHeader from "../../components/headers/HomeHeader";
@@ -6,9 +6,8 @@ import ProfileSectionButton from "../../components/buttons/profileSectionButton"
 import { sharedPaddingHorizontal } from "../../style/sharedStyles";
 import AppText from "../../components/texts/AppText";
 import { s, vs } from "react-native-size-matters";
-import MyOrdersScreen from "../profile/MyOrdersScreen"
 import { useNavigation } from "@react-navigation/native";
-
+import MyOrdersScreen from "../profile/MyOrdersScreen"
 const ProfileScreen = () => {
   const navigation = useNavigation();
   

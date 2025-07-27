@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet } from "react-native";
 import React from "react";
 import { sharedPaddingHorizontal } from "../../style/sharedStyles";
-import OrderItem from "../../components/cart/cartItem";
+import OrderItem from "../../components/cart/OrderItem";
 import AppSafeView from "../../components/views/AppSaveView";
 
 const MyOrdersScreen = () => {

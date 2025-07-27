@@ -1,38 +1,34 @@
-import { StyleSheet,Text,Image ,View, Pressable } from "react-native";
-import React ,{FC} from "react";
-import AppSaveView from "../../components/views/AppSaveView";
-import HomeHeader from "../../components/headers/HomeHeader";
+import { StyleSheet, Text, Image, View, Pressable } from "react-native";
+import React, { FC } from "react";
 import { s, vs } from "react-native-size-matters";
 import AppText from "../texts/AppText";
 import { AppColors } from "../../style/colors";
 import { AppFonts } from "../../style/fonts";
-import {AntDesign ,FontAwesome} from "@expo/vector-icons"
+import { AntDesign, FontAwesome } from "@expo/vector-icons";
 
 interface ICartItem {
-  title :string,
-  price :string  | number,
-  imageURL : string,
-  qty :number ,
-  onDeletePress : () => void,
-  onIncreasePress : () => void,
-  onReducePress :() => void
+  title: string;
+  price: string | number;
+  imageURL: string;
+  qty: number;
+  onDeletePress: () => void;
+  onIncreasePress: () => void;
+  onReducePress: () => void;
 }
-const CartItem : FC<ICartItem> = ({
+const CartItem: FC<ICartItem> = ({
   title,
   price,
   imageURL,
   qty,
   onDeletePress,
   onIncreasePress,
-  onReducePress
-  
+  onReducePress,
 }) => {
-
   return (
     <View style={styles.container}>
       {/* Image Container */}
       <View style={styles.imageContainer}>
-        <Image source={{ uri: imageURL}} style={styles.image} />
+        <Image source={{ uri: imageURL }} style={styles.image} />
       </View>
 
       {/* Details Container */}
@@ -41,11 +37,11 @@ const CartItem : FC<ICartItem> = ({
         <AppText style={styles.textPrice}>{price}</AppText>
 
         <View style={styles.qtyContainer}>
-          <Pressable  onPress={onIncreasePress}     style={styles.iconButton}>
+          <Pressable onPress={onIncreasePress} style={styles.iconButton}>
             <FontAwesome name="plus" size={s(10)} color={AppColors.primary} />
           </Pressable>
           <AppText style={styles.textQty}>{qty}</AppText>
-          <Pressable onPress={onReducePress}    style={styles.iconButton}>
+          <Pressable onPress={onReducePress} style={styles.iconButton}>
             <FontAwesome name="minus" size={s(10)} color={AppColors.primary} />
           </Pressable>
         </View>
@@ -53,7 +49,7 @@ const CartItem : FC<ICartItem> = ({
 
       {/* Delete Button Container */}
       <View style={styles.deleteContainer}>
-        <Pressable onPress={onDeletePress}     style={styles.deleteButton}>
+        <Pressable onPress={onDeletePress} style={styles.deleteButton}>
           <AntDesign name="delete" size={s(14)} color={AppColors.redColor} />
           <AppText style={styles.deleteText}>Delete</AppText>
         </Pressable>
@@ -83,7 +79,7 @@ const styles = StyleSheet.create({
   deleteContainer: {
     flex: 1,
     justifyContent: "flex-end",
-    alignItems :"flex-end",
+    alignItems: "flex-end",
     paddingEnd: s(12),
   },
   image: {

@@ -1,20 +1,16 @@
 import { StyleSheet, Text, View } from "react-native";
-import React , {FC} from "react";
-import AppSaveView from "../../components/views/AppSaveView";
-import HomeHeader from "../../components/headers/HomeHeader";
-import CartItem from "../../components/cart/cartItem";
+import React, { FC } from "react";
 import { vs } from "react-native-size-matters";
 import AppText from "../texts/AppText";
 import { s } from "react-native-size-matters";
 import { AppColors } from "../../style/colors";
 import { shippingFees, taxes } from "../../constants/constant";
 interface ITotalView {
-    itemPrice : number,
-    orderTotal : number ,
+  itemPrice: number;
+  orderTotal: number;
 }
-const TotalView  : FC<ITotalView>= ({itemPrice, orderTotal}) => {
- 
-    return (
+const TotalView: FC<ITotalView> = ({ itemPrice, orderTotal }) => {
+  return (
     <View>
       <View style={styles.row}>
         <AppText style={styles.textTitle}> Item Price :</AppText>
@@ -26,18 +22,14 @@ const TotalView  : FC<ITotalView>= ({itemPrice, orderTotal}) => {
       </View>
       <View style={styles.row}>
         <AppText style={styles.textTitle}> Shipping Fee:</AppText>
-        <AppText style={styles.textPrice}>   ${shippingFees}</AppText>
+        <AppText style={styles.textPrice}> ${shippingFees}</AppText>
       </View>
       <View style={styles.separator} />
-        <View style={styles.row}>
-            <AppText style={styles.textTitle}> Order Total:</AppText>
+      <View style={styles.row}>
+        <AppText style={styles.textTitle}> Order Total:</AppText>
         <AppText style={styles.textPrice}> ${orderTotal}</AppText>
-
-        </View>
-
-
       </View>
-  
+    </View>
   );
 };
 

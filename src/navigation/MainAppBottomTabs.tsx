@@ -43,6 +43,7 @@ export default function MainAppBottomTabs (){
                     <Ionicons name="person" size={size} color={color}  />
                 )
               }}/>
+              
         </Tab.Navigator>
     )
 };
